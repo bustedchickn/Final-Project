@@ -32,8 +32,7 @@ class DrawActorsAction(Action):
         marquee = cast["marquee"][0]
         self._output_service.draw_actor(marquee)
 
-        robot = cast["robot"][0]
-        self._output_service.draw_actor(robot)
+        
 
 
 
@@ -41,7 +40,8 @@ class DrawActorsAction(Action):
         artifacts = cast["artifact"]
         self._output_service.draw_actors(artifacts)
 
-        
+        robot = cast["robot"][0]
+        self._output_service.draw_actor(robot)
 
 
 

@@ -27,6 +27,7 @@ def main(screen):
     position = Point(x, y)
     robot = Actor()
     robot.set_tag("robot")
+    robot.set_bg(2)
     robot.set_text("#")
     robot.set_position(position)
     cast["robot"] = [robot]
@@ -41,6 +42,8 @@ def main(screen):
         artifact = Actor()
         artifact.set_tag("artifact")
         artifact.set_description(description)
+        artifact.set_color(3)
+        artifact.set_bg(2)
         artifact.set_text(text)
         artifact.set_position(position)
         artifacts.append(artifact)

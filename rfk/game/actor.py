@@ -22,6 +22,8 @@ class Actor:
         self._tag = ""
         self._position = Point(0, 0)
         self._velocity = Point(0, 0)
+        self._color = 7
+        self._bg = 0
 
     def get_description(self):
         """Gets the artifact's description.
@@ -30,6 +32,18 @@ class Actor:
             string: The artifact's description.
         """
         return self._description 
+
+    def get_bg(self):
+        return self._bg
+    
+    def set_bg(self, bg):
+        self._bg = bg
+
+    def get_color(self):
+        return self._color
+
+    def set_color(self, color):
+        self._color = color
 
     def get_position(self):
         """Gets the actor's position in 2d space.
