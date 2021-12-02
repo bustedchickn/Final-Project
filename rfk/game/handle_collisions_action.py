@@ -21,8 +21,13 @@ class HandleCollisionsAction(Action):
         marquee.set_text("")
         for artifact in artifacts:
             if robot.get_position().equals(artifact.get_position()):
-                robot.set_bg(5)
+                
                 description = artifact.get_description()
                 marquee.set_text(description) 
-            else:
-                robot.set_bg(2)
+                
+        if marquee.get_text() == "":
+            robot.set_bg(0)
+            robot.set_color(6)
+        else:
+            robot.set_bg(2)
+            robot.set_color(0)
