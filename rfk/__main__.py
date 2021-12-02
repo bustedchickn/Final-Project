@@ -33,9 +33,9 @@ def main(screen):
 
     artifacts = []
     for n in range(constants.ARTIFACTS):
-        text = chr(random.randint(33, 126))
+        text = chr(random.randint(33, 34))
         description = constants.MESSAGES[n]
-        x = random.randint(0, constants.MAX_X - 1)
+        x = random.randint(1, constants.MAX_X - 1)
         y = random.randint(1, constants.MAX_Y - 1)
         position = Point(x, y)
         artifact = Actor()
