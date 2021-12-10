@@ -19,7 +19,10 @@ class DrawActorsAction(Action):
             input_service (InputService): An instance of InputService.
         """
         self._output_service = output_service
+        self._battle = False
         
+    def set_battle(self, bool):
+        self._battle = bool
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -29,19 +32,16 @@ class DrawActorsAction(Action):
         """
         self._output_service.clear_screen()
         
-        marquee = cast["marquee"][0]
-        self._output_service.draw_actor(marquee)
+        if not self._battle:
 
-        
+            marquee = cast["marquee"][0]
+            self._output_service.draw_actor(marquee)
 
+            artifacts = cast["artifact"]
+            self._output_service.draw_actors(artifacts)
 
-
-        
-        artifacts = cast["artifact"]
-        self._output_service.draw_actors(artifacts)
-
-        robot = cast["robot"][0]
-        self._output_service.draw_actor(robot)
+            robot = cast["robot"][0]
+            self._output_service.draw_actor(robot)
 
 
 

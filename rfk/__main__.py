@@ -34,7 +34,8 @@ def main(screen):
 
     artifacts = []
     for n in range(constants.ARTIFACTS):
-        text = chr(random.randint(33, 34))
+        text = "l"
+        #chr(random.randint(33, 34))
         description = constants.MESSAGES[n]
         x = random.randint(1, constants.MAX_X - 1)
         y = random.randint(1, constants.MAX_Y - 1)
