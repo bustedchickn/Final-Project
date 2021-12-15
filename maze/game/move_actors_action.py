@@ -42,3 +42,22 @@ class MoveActorsAction(Action):
         y = 1 + (y1 + y2 - 1) % (constants.MAX_Y - 1)
         position = Point(x, y)
         actor.set_position(position)
+    
+    def _move_actor_back(self, actor):
+        """Moves the given actor to its next position according to its 
+        velocity. Will wrap the position from one side of the screen to the 
+        other when it reaches the edge in either direction.
+        
+        Args:
+            actor (Actor): The actor to move.
+        """
+        position = actor.get_position()
+        velocity = actor.get_velocity()
+        x1 = position.get_x()
+        y1 = position.get_y()
+        x2 = velocity.get_x()
+        y2 = velocity.get_y()
+        x = 1 - (x1 + x2 - 1) % (constants.MAX_X - 1)
+        y = 1 - (y1 + y2 - 1) % (constants.MAX_Y - 1)
+        position = Point(x, y)
+        actor.set_position(position)

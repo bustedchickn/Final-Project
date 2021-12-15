@@ -8,6 +8,8 @@ class HandleCollisionsAction(Action):
     Stereotype:
         Controller
     """
+    def __init__(self):
+        self.formerPosish = None
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -24,10 +26,15 @@ class HandleCollisionsAction(Action):
                 
                 description = artifact.get_description()
                 marquee.set_text(description) 
-                
-        if marquee.get_text() == "":
-            robot.set_bg(0)
-            robot.set_color(6)
-        else:
+
+        
+
+        if marquee.get_text() == "wall":
+            robot.set_position(self.formerPosish)
+            
             robot.set_bg(2)
+            robot.set_color(5)
+        else:
+            self.formerPosish = robot.get_position()
+            robot.set_bg(7)
             robot.set_color(0)
